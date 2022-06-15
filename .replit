@@ -1,2 +1,2 @@
 language = "python3"
-run = "python 01_recipe_not_blank/recipe_not_blank_v2.py"
+run = "python 02_float_checker/float_checker_v2.py"
