@@ -1,6 +1,6 @@
 #15/6/22 - KLB
 #Recipe Cost Calculator
-#Float Checker V4
+#Float Checker V4.1
 #Aim - To create a function that still has specific error messages but would be more flexible when the function is used for different questions
 
 
