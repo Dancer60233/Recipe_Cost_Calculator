@@ -1,13 +1,25 @@
 #20/6/22 - KLB
 #Recipe Cost Calculator
-#Base V1
-#Aim - To create a version of my code that has all functions and my basic decomposition. So even though it won't work currently it'll make it easier to add components
+#Base V2
+#Aim - To add my not blank function to the code
 
 
 #------------Functions---------------
 
-def not_blank(input):
- print("Place holder")
+def not_blank(question):
+  valid = False
+
+  while not valid:
+    response = input(question)
+
+    if response != "":
+      return response
+
+    else:
+      print("Sorry - This can't be blank")
+
+
+
 
 def float_checker(input):
  print("Place holder")
@@ -42,8 +54,7 @@ if __name__ == "__main__":
  print("Welcome to the Recipe Cost Calculator")
 
 #Ask user for basic details about recipe
- recipe_name = input("Recipe Name:")
- recipe_name = not_blank(recipe_name)
+ recipe_name = not_blank("Recipe Name:")
  serving_size = input("Sering Size:")
  serving_size = float_checker(serving_size)
  space(2)
@@ -54,8 +65,7 @@ if __name__ == "__main__":
    #Ask for information about ingredients
 
    #Ingredient name 
-   ing_name = input("Ingredient Name: ")
-   ing_name = not_blank(ing_name)
+   ing_name = not_blank("Ingredient Name: ")
 
    #Amount of ingredient needed
    amount_ing_need = input("Amount Ingredient Needed:")
