@@ -76,8 +76,8 @@ if __name__ == "__main__":
  print("Welcome to the Recipe Cost Calculator")
 
 #Ask user for basic details about recipe
- recipe_name = not_blank("Recipe Name:")
- serving_size = float_checker("Serving Size:", "serving size")
+ recipe_name = not_blank("Recipe Name: ")
+ serving_size = float_checker("Serving Size: ", "serving size")
  space(2)
 
 #Loop for number of ingredients
@@ -89,15 +89,15 @@ if __name__ == "__main__":
    ing_name = not_blank("Ingredient Name: ")
 
    #Amount of ingredient needed
-   amount_ing_need = input("Amount Ingredient Needed:")
+   amount_ing_need = input("Amount Ingredient Needed: ")
    amount_ing_need = string_analyser(amount_ing_need)
 
    #Total Amount of ingredient purchased
-   total_amount_ing = input("Total Amount of Ingredient Purchased:")
+   total_amount_ing = input("Total Amount of Ingredient Purchased: ")
    total_amount_ing = string_analyser(total_amount_ing)
 
    #Ingredient Price
-   ing_price = float_checker("Ingredient Price:", "price")
+   ing_price = float_checker("Ingredient Price: $", "price")
    
    #Calculate cost of ingredient needed
    calc_ing_cost()
