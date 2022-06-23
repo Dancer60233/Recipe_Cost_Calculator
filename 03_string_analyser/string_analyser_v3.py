@@ -6,34 +6,27 @@
 
 #************** Main Routine ****************
 
-import re
+desired_amount = ""
+desired_unit = ""
+all_amounts = ""
+all_units = ""
 
-#works out whether string has numbers and seperates string into amount and item
 
-test_strings = [
-  "500kg",
-  "1kg",
-  "2 kilograms",
-  "20 grams",
-]
+for i in range (4):
+  ingredient_amount = input("Ingredient Amount: ")
+  for m in ingredient_amount:
+    if m.isdigit():
+        desired_amount = desired_amount + m
+        desired_amount = desired_amount.strip()
+    else:
+      desired_unit = desired_unit + m
+      desired_unit = desired_unit.strip()
 
-amount = []
-unit = []
+  all_amounts + " " + desired_amount
+  all_units + " " + desired_unit
 
-for item in range(3):
- ing_amount = input("Ingredient Amount: ")
- for word in ing_amount.split():
-   if word.isdigit():
-      amount.append(int(word))
-   else:
-     unit.append(word)
-     
-
-print(amount)
-print(unit)
-
-     
-
+print(all_amounts) 
+print(all_units)
 
 #print order
  
