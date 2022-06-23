@@ -18,15 +18,13 @@ test_strings = [
 ]
 
 for item in test_strings:
- number = 4
- valid = False
   #regular expression to find if item starts with a number
  number_regex = "^[1-9][0-9][0-9]"
 
  #if item has a number, seperate it into two (number and letters)
  if re.match(number_regex, item):
-     amount = float(item[0:3])
-     unit = item[3:]
+     amount = item[0:2]
+     unit = item[2:]
 
 # remove white space around snack
      unit = unit.strip()

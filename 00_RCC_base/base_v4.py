@@ -1,8 +1,7 @@
 #20/6/22 - KLB
 #Recipe Cost Calculator
-#Base V3
-#Aim - To add my float checker function to the code and get it work for where it's needed
-
+#Base V4
+#Aim - To create a new way of asking for amount of ingredient by using str
 
 #------------Functions---------------
 
