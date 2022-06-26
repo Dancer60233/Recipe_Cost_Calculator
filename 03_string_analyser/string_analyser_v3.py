@@ -8,8 +8,8 @@
 
 desired_amount = ""
 desired_unit = ""
-all_amounts = ""
-all_units = ""
+all_amounts = []
+all_units = []
 
 
 for i in range (4):
@@ -17,13 +17,14 @@ for i in range (4):
   for m in ingredient_amount:
     if m.isdigit():
         desired_amount = desired_amount + m
-        desired_amount = desired_amount.strip()
+        
     else:
       desired_unit = desired_unit + m
-      desired_unit = desired_unit.strip()
-
-  all_amounts + " " + desired_amount
-  all_units + " " + desired_unit
+      
+  desired_unit = desired_unit.strip()
+  desired_amount = desired_amount.strip()
+  all_amounts.append(desired_amount)
+  all_units.apend(desired_unit)
 
 print(all_amounts) 
 print(all_units)
