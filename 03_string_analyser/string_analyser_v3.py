@@ -23,11 +23,13 @@ for i in range (4):
       
   desired_unit = desired_unit.strip()
   desired_amount = desired_amount.strip()
-  all_amounts.append(desired_amount)
-  all_units.apend(desired_unit)
+  print(desired_amount) 
+  print(desired_unit)
+  print("Length of Unit:", len(desired_unit))
 
-print(all_amounts) 
-print(all_units)
+  
+
+
 
 #print order
  
