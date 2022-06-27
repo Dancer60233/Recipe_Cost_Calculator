@@ -61,9 +61,6 @@ def space(num_spaces):
   
 
 
-
-
-
 #*************** Main Routine *************
 
 #Temporary number of ingredients will ask user in future versions
