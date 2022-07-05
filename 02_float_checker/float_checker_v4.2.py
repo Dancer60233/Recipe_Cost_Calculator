@@ -12,7 +12,7 @@ def float_checker(question, error_message):
    try:
     response = float(input(question))
 
-    if response > 0:
+    if response >= 0:
       valid = True
    #Checks if number is in range
     else:
