@@ -1,8 +1,8 @@
 #9/7/22 - KLB
 #Recipe Cost Calculator
-#Amount Analyser V4
-#Aim - To add my gram conversion function to the amount analyser so it also produces amount in grams
-#Reflection - Works as intended aside from eggs 
+#Amount Analyser V5
+#Aim - To allow my program to accept eggs
+#Reflection - 
 
 
 #Functions
@@ -30,7 +30,7 @@ def amount_analyser(ingredient):
       desired_unit = desired_unit + m
 
    desired_amount = desired_amount.strip()
-   desired_unit = desired_unit.strip()
+   desired_unit = desired_unit.strip().lower()
 
   #Use string check to see if unit is valid
    unit = string_check(desired_unit, valid_units)
@@ -68,6 +68,8 @@ def amount_analyser(ingredient):
     gram_amount = amount * 5.69
    elif unit == "tbsp":
     gram_amount = amount * 17.07 
+   elif unit == "eggs":
+    gram_amount = "egg"
    elif unit == "cups":
     if ingredient == "butter":
       gram_amount = amount * 250
@@ -119,11 +121,12 @@ valid_units =[
   ["kg", "kilograms", "kilogram", "kilos", "kilo"],
   ["tbsp", "tablespoon", "tablespoons"],
   ["tsp", "teaspoon", "teaspoons"],
-  ["cups", "cup"]
+  ["cups", "cup"],
+  ["eggs", "egg"]
 ]
 
-#Ask for 4 amounts (repeats 4 times for testing)
-for item in range(1):
+#Ask for 5 amounts (repeats 5 times for testing)
+for item in range(5):
 
   
   ingredient_name = input("Ingredient: ").lower()
