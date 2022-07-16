@@ -1,7 +1,7 @@
-#12/07/22 - KLB
+#15/07/22 - KLB
 #Recipe Cost Calculator
-#Base V4
-#Aim - To add my amount analyser component to the base and get it to work
+#Base V5
+#Aim - To get my ingredient amount loop to properly function so there is also exit code
 
 #------------Functions---------------
 
@@ -191,26 +191,32 @@ if __name__ == "__main__":
  serving_size = float_checker("Serving Size: ", "serving size")
  space(2)
 
-#Loop for number of ingredients
- for item in range(0, num_ing):
+
+ing_name = ""
+
+#Loop until exit code is entered
+while ing_name != "xxx":
    
-   #Ask for information about ingredients
 
    #Ingredient name 
-   ing_name = not_blank("Ingredient Name: ")
+   ing_name = not_blank("Ingredient Name: ").lower()
+
+  #If exit code is entered stop loop
+   if ing_name == "xxx":
+     break
 
    
-   #Amount of ingredient needed
+   #Ask for Amount of ingredient needed
    need_amount, need_unit, need_amount_in_g = amount_analyser(ing_name, "Ingredient Amount Needed: ")
    all_amounts.append(need_amount)
    all_units.append(need_unit)
 
 
-   #Total Amount of ingredient purchased
+   # Ask for Total Amount of ingredient purchased
    total_amount, total_unit, total_amount_in_g = amount_analyser(ing_name, "Total Ingredient Amount: ")
   
 
-   #Ingredient Price
+   #Ask for Ingredient Price
    ing_price = float_checker("Ingredient Price: $", "price")
    
    #Calculate cost of ingredient needed
@@ -219,10 +225,10 @@ if __name__ == "__main__":
    space(1)
 
 #Calculate cost per serving
- cost_per_serving = calc_serving_cost()
+cost_per_serving = calc_serving_cost()
 
 #Output results
- print("Total cost is {}".format(cost_per_serving))
+print("Total cost is {}".format(cost_per_serving))
 
    
  
