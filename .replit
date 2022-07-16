@@ -1,2 +1,2 @@
 language = "python3"
-run = "python 07_ing_cost_calc/ingredient_cost_v2.py"
+run = "python 00_RCC_base/base_v6.py"
