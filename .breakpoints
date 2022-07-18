@@ -7,6 +7,14 @@
         "version": 258,
         "index": 202
       }
+    ],
+    "08_pandas_output/pandas_output_v1.py": [
+      {
+        "id": "25f5d031-0d38-43ab-8d56-5b94d45c5949",
+        "line": 52,
+        "version": 1067,
+        "index": 1428
+      }
     ]
   }
 }
