@@ -132,12 +132,12 @@ def amount_analyser(ingredient, question):
   elif unit == "tbsp":
     calc_amount = amount * 17.07 
   elif unit == "ml":
-    if ingredient == "Milk":
+    if ingredient == "milk":
       calc_amount = amount * 1.04
     else:
        calc_amount = amount
   elif unit == "l":
-    if ingredient == "Milk":
+    if ingredient == "milk":
       calc_amount = amount * 1030
     else:
        calc_amount = amount * 1000
@@ -145,20 +145,20 @@ def amount_analyser(ingredient, question):
      calc_amount = amount
    #Different calculations for ingredients so it's more accurate
   elif unit == "cups":
-    if ingredient == "Milk":
+    if ingredient == "milk":
       calc_amount = amount * 240
-    elif ingredient == "Flour":
+    elif ingredient == "flour":
       calc_amount = amount * 125
-    elif ingredient == "Oil":
+    elif ingredient == "oil":
      calc_amount = amount * 220
-    elif ingredient == "Water":
+    elif ingredient == "water":
      calc_amount = amount * 236 
     else:
       calc_amount = amount * 250
    
 
  #Format amount nicely so it'll be outputted nice
-  output_amount = str(amount) + "" + unit
+  output_amount = str(amount) + " " + unit
      
   return calc_amount, output_amount
  
@@ -181,11 +181,11 @@ def space(num_spaces):
 
 
 #Initialise Ingredient Information Lists
-all_ing_names = ["Butter", "Flour"]
-all_prices = [5, 1.67]
-all_need_amounts= ["100 g", "1 cup"]
-all_total_amounts = ["500 g", "1.5 kg"]
-all_ing_costs = [1, 0.14]
+all_ing_names = []
+all_prices = []
+all_need_amounts= []
+all_total_amounts = []
+all_ing_costs = []
 
 #Data Frame Dictionary
 ingredient_info_dict = {
@@ -238,7 +238,7 @@ while ing_name != "xxx":
      break
    else:
      #If name not exit code append Name to list
-     all_ing_names.append(ing_name)
+     all_ing_names.append(ing_name.title())
 
    
    #Ask for Amount of ingredient needed and analyse it
@@ -281,10 +281,12 @@ ingredients_frame = ingredients_frame.set_index('Ingredient Name')
 pandas.set_option('display.max_columns', None)
 
 #Display numbers to 2 dp
-pandas.set_option('display.precision', 2)
+ingredients_frame['Ingredient Cost'] = ingredients_frame['Ingredient Cost'].apply(lambda x: float("{:.2f}".format(x)))
+
+
 
 #Rename columns to shorter names
-ingredients_frame = ingredients_frame.rename(columns={'Amount Needed': 'Amount', 'Ingredient Cost': 'Cost'  })
+ingredients_frame = ingredients_frame.rename(columns={'Amount Needed': 'Amount', 'Ingredient Cost': 'Cost'})
   
 
 
