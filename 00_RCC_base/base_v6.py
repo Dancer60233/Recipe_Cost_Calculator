@@ -41,9 +41,9 @@ def float_checker(question, type):
 
 def string_check(choice, options):
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unitis in one of the lists, return the shorthand unit
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get shorthand name of unit and put it in lowers case 
        return var_list[0].lower()
        is_valid = "yes"
        break
@@ -73,7 +73,7 @@ def amount_analyser(ingredient, question):
   unit = "invalid choice"
   amount = "invalid choice"
   
-  
+  #Repeat unit both unit and amount are valid
   while unit == "invalid choice" or amount == "invalid choice":
    desired_amount = ""
    desired_unit = ""
@@ -89,6 +89,7 @@ def amount_analyser(ingredient, question):
         
     else:
       desired_unit = desired_unit + m
+      
 
    desired_amount = desired_amount.strip()
    desired_unit = desired_unit.strip().lower()
@@ -116,19 +117,25 @@ def amount_analyser(ingredient, question):
        #Error message if unit invalid
    elif unit == "invalid choice":
       print("Invalid Choice! Please enter a valid unit")
+     
     #Error message if  amount invalid
    elif amount == "invalid choice":
       print("Invalid Choice! Please enter a valid amount")
 
   #Convert amount into grams
+  #Grams
    if unit == "g":
     calc_amount = amount
+  #kilograms
    elif unit == "kg":
     calc_amount = amount * 1000
+  #teaspoons
    elif unit == "tsp":
     calc_amount = amount * 5.69
+  #tablespoons
    elif unit == "tbsp":
     calc_amount = amount * 17.07 
+  #cups
    elif unit == "cups":
     if ingredient == "butter":
       calc_amount = amount * 250
@@ -142,6 +149,7 @@ def amount_analyser(ingredient, question):
      calc_amount = amount * 236 
     else:
       calc_amount = amount * 250
+  #eggs
    elif unit == "eggs":
      calc_amount = amount
    

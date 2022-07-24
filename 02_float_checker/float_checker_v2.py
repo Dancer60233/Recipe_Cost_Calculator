@@ -12,9 +12,11 @@ def float_checker(question, error_message):
    try:
     response = float(input(question))
 
+     #Checks if number is in range
     if response > 0:
       valid = True
-   #Checks if number is in range
+
+    #If needed print out errors
     else:
      print(error_message)
    except:
@@ -28,5 +30,6 @@ def float_checker(question, error_message):
 
 
 # Main Routine 
+#Output
 serving_size = float_checker("Serving size: ", "Invalid number! Please enter the serving size ")
 print(serving_size)

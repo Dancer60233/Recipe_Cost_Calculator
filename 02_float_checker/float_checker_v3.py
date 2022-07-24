@@ -30,5 +30,7 @@ def float_checker(question):
 
 
 # Main Routine 
+
+#Output
 serving_size = float_checker("Serving size: ")
 print(serving_size)

@@ -23,5 +23,7 @@ def float_checker(question, error_message):
 
 
 # Main Routine 
+
+#Output 
 serving_size = float_checker("Serving size: ", "Invalid number! Please enter the serving size ")
 print(serving_size)

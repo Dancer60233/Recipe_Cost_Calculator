@@ -26,15 +26,16 @@ for item in test_strings:
      amount = item[0:2]
      unit = item[2:]
 
-# remove white space around snack
+# remove white space around unit
      unit = unit.strip()
+
+#Output
      print("Amount:", amount)
      print("Unit:", unit) 
      print("Length of Unit:", len(unit))
      
 
 
-#print order
  
 
 

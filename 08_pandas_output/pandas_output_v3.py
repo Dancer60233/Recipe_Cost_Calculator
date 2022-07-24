@@ -44,8 +44,8 @@ pandas.set_option('display.precision', 2)
 #Rename columns to shorter names
 ingredients_frame = ingredients_frame.rename(columns={'Amount Needed': 'Amount', 'Ingredient Cost': 'Cost'  })
 
-#print details...
 
+#print details...
 print("\n{}     Serving Size: {}  \n".format(recipe_name, serving_size))
 print(ingredients_frame[['Amount', 'Cost']])
 print("\nTotal Cost: {:.2f} \nCost per serving: {:.2f}".format(total_cost, cost_per_serving))

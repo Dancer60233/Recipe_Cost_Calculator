@@ -41,9 +41,9 @@ def float_checker(question, type):
 
 def string_check(choice, options):
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unit is in one of the lists, return the full name
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get shorthand version of unit and return in lower case
        return var_list[0].lower()
        is_valid = "yes"
        break

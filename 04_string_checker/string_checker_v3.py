@@ -6,9 +6,9 @@
 def string_check(choice, options):
 
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unit is in one of the lists, return the shorthand
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get shorthand of unit and put it in lowers case so it looks nice when outputted
        return var_list[0].lower()
        is_valid = "yes"
        break
@@ -43,9 +43,10 @@ while unit == "invalid choice":
  
  unit = string_check(desired_unit, valid_units)
 
+#Error Message
  if unit == "invalid choice":
    print("Invalid Choice! Please enter a valid unit")
  
-
+#output
 print(unit)
 

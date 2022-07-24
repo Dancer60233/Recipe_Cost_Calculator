@@ -14,8 +14,10 @@ def amount_analyser():
   while unit == "invalid choice":
    desired_amount = ""
    desired_unit = ""
-    
+
    ingredient_amount = input("Ingredient Amount: ")
+
+    #Split Amount and unit
    for m in ingredient_amount:
     if m.isdigit() or m == ".":
         desired_amount = desired_amount + m
@@ -24,17 +26,19 @@ def amount_analyser():
       desired_unit = desired_unit + m
       
    desired_unit = desired_unit.strip()
- 
+
+   #Check unit is valid
    unit = string_check(desired_unit, valid_units)
    if unit == "invalid choice":
      print("Invalid Choice! Please enter a valid unit")
+  
   return desired_amount, unit
  
 def string_check(choice, options):
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unit is in one of the lists, return the shorthand
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get the shorthand of unit and put it in lowers case so it looks nice when outputted
        return var_list[0].lower()
        is_valid = "yes"
        break
@@ -64,7 +68,7 @@ valid_units =[
   ["tsp", "teaspoon", "teaspoon"]
 ]
 
-#Ask for 4 amounts (repeats 4 times for testing)
+#Ask for 2 amounts (repeats 2 times for testing)
 for item in range(2):
 
   #Ask and spilt amount and unit

@@ -13,16 +13,23 @@ all_units = []
 
 
 for i in range (4):
+  
   ingredient_amount = input("Ingredient Amount: ")
+
+  #SPlit amount and unit
   for m in ingredient_amount:
     if m.isdigit():
         desired_amount = desired_amount + m
         
     else:
       desired_unit = desired_unit + m
+
+  #Remove white space
       
   desired_unit = desired_unit.strip()
   desired_amount = desired_amount.strip()
+
+  #Output details
   print(desired_amount) 
   print(desired_unit)
   print("Length of Unit:", len(desired_unit))
@@ -31,8 +38,6 @@ for i in range (4):
 
 
 
-#print order
- 
 
 
    

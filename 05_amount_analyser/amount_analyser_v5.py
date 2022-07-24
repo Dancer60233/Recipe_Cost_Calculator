@@ -88,9 +88,9 @@ def amount_analyser(ingredient):
  
 def string_check(choice, options):
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unit is in one of the lists, return the short hand
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get shorthand of unit and put it in lowers case so it looks nice when outputted
        return var_list[0].lower()
        is_valid = "yes"
        break
@@ -133,6 +133,7 @@ for item in range(5):
 
   #Ask and spilt amount and unit
   desired_amount, desired_unit, amount_in_g = amount_analyser(ingredient_name)
+  #Append to lists
   all_amounts.append(desired_amount)
   all_units.append(desired_unit)
   all_gram_amounts.append(amount_in_g)

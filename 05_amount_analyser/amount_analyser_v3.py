@@ -63,9 +63,9 @@ def amount_analyser():
  
 def string_check(choice, options):
  for var_list in options:
-   #if snack is in one of the lists, return the full name
+   #if unit is in one of the lists, return the short hand
       if choice in var_list:
-  #Get full name of snack and put it in titles case so it looks nice when outputted
+  #Get short hand of unit and put it in lowers case so it looks nice when outputted
        return var_list[0].lower()
        is_valid = "yes"
        break
@@ -95,7 +95,7 @@ valid_units =[
   ["tsp", "teaspoon", "teaspoons"]
 ]
 
-#Ask for 4 amounts (repeats 4 times for testing)
+#Ask for 2 amounts (repeats 2 times for testing)
 for item in range(2):
 
   #Ask and spilt amount and unit

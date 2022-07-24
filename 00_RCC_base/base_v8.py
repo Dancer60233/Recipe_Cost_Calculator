@@ -70,7 +70,7 @@ def amount_analyser(ingredient, question):
 
   unit = "invalid choice"
   amount = "invalid choice"
-  amount_is_fraction = False
+
   
   
   while unit == "invalid choice" or amount == "invalid choice":
@@ -93,6 +93,8 @@ def amount_analyser(ingredient, question):
     desired_amount = desired_amount.strip()
     desired_unit = desired_unit.strip().lower()
 
+
+    #If amount is a fraction convert to decimal
     for m in desired_amount:
       if m == "/":
        desired_amount  = eval(desired_amount)
@@ -127,27 +129,34 @@ def amount_analyser(ingredient, question):
       print("Invalid Choice! Please enter a valid amount")
 
   #Gram Conversion
-  #Uses different calculations depending on unit
+  #Grams
   if unit == "g":
     calc_amount = amount
+  #Kilograms
   elif unit == "kg":
     calc_amount = amount * 1000
+    #teaspoons
   elif unit == "tsp":
     calc_amount = amount * 5.69
+  #Tablespoons
   elif unit == "tbsp":
     calc_amount = amount * 17.07 
+  #Mililiters
   elif unit == "ml":
     if ingredient == "milk":
       calc_amount = amount * 1.04
     else:
        calc_amount = amount
+  #Litres
   elif unit == "l":
     if ingredient == "milk":
       calc_amount = amount * 1030
     else:
        calc_amount = amount * 1000
+  #Eggs
   elif unit == "eggs":
      calc_amount = amount
+  #Cups
    #Different calculations for ingredients so it's more accurate
   elif unit == "cups":
     if ingredient == "milk":
@@ -162,7 +171,7 @@ def amount_analyser(ingredient, question):
       calc_amount = amount * 250
    
 
- #Format amount nicely so it'll be outputted nice
+ #Format amount so it'll be outputted nice
   output_amount = str(amount) + " " + unit
      
   return calc_amount, output_amount
@@ -201,7 +210,7 @@ ingredient_info_dict = {
     'Ingredient Cost': all_ing_costs,
     }
 
-
+#List of valid units
 valid_units =[
   ["g", "grams", "gram" ],
   ["kg", "kilograms", "kilogram", "kilos", "kilo"],

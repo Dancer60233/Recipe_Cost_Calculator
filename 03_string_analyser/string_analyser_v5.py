@@ -5,7 +5,7 @@
 #Aim - To add the desired unit and amounts to seperate list and get the program to work 
 
 
-#************** Main Routine ****************
+#Functions
 
 
 
@@ -15,13 +15,16 @@ def amount_analyser():
   desired_unit = ""
 
   ingredient_amount = input("Ingredient Amount: ")
+
+  #Split amount and Unit
   for m in ingredient_amount:
     if m.isdigit() or m == ".":
         desired_amount = desired_amount + m
         
     else:
       desired_unit = desired_unit + m
-      
+
+  #remove WHite Space
   desired_unit = desired_unit.strip()
   desired_amount = desired_amount.strip()
   return desired_amount, desired_unit
@@ -31,8 +34,7 @@ def amount_analyser():
   
 
 
-
-#Main Routine
+#************** Main Routine ****************
 
 all_amounts = []
 all_units = []

@@ -4,6 +4,7 @@
 #Aim - To create a basic version of the gram conversion component that involves cups for basic ingredients
 
 def gram_conversion(amount, unit, ingredient):
+#Convert different units to grams
  if unit == "g":
    gram_amount = amount
  elif unit == "kg":
@@ -13,6 +14,7 @@ def gram_conversion(amount, unit, ingredient):
  elif unit == "tbsp":
   gram_amount = amount * 17.07 
  elif unit == "cups":
+  #More precise for different ingredients
   if ingredient == "Butter" or ingredient == "Sugar":
    gram_amount = amount * 250
   elif ingredient == "Flour":
@@ -27,7 +29,7 @@ def gram_conversion(amount, unit, ingredient):
    
 
 
-
+#repeat 6 times for testing 
 for item in range(6):
  amount = int(input("Amount: "))
  unit = input("Unit: ")
@@ -35,5 +37,6 @@ for item in range(6):
 
  amount_in_g = gram_conversion(amount, unit, ingredient)
 
+#Print details...
  print("Ingredient: {} ({} {})".format(ingredient,amount,unit))
  print("Amount in Grams: {}g \n".format(amount_in_g))

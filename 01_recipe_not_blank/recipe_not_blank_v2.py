@@ -21,5 +21,6 @@ def not_blank(question, error_message):
 
 #Main Routine
 
+#print details...
 name= not_blank("Recipe: ", "Sorry- this can't be blank, please enter your recipe name")
   

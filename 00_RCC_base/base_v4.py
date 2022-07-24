@@ -168,6 +168,7 @@ def space(num_spaces):
 
 #Temporary number of ingredients will ask user in future versions
 num_ing = 3
+
 all_amounts = []
 all_units = []
 

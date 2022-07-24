@@ -11,14 +11,18 @@ def ing_cost_calc(price, need_ing, total_ing):
 
 #Main Routine 
 
-  
+#intialise recipe cost variable
 recipe_cost = 0
 
+#Repeat 3 times for testing
 for item in range(3):
+
+  #Get input
   price = float(input("Ingredient Price: "))
   need_amount = float(input("Needed Amount: "))
   total_amount = float(input("Total Amount: "))
 
+  #Calculate cost and print
   ing_cost = ing_cost_calc(price, need_amount, total_amount)
   print(ing_cost)
   print("")

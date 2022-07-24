@@ -44,8 +44,6 @@ def float_checker(question, type):
 
 
 
-# Main Routine 
-
 def string_analyser(input):
  print("Place holder")
 

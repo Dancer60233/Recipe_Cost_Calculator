@@ -20,6 +20,7 @@ test_strings = [
 for item in test_strings:
  number = 4
  valid = False
+  
   #regular expression to find if item starts with a number
  number_regex = "^[1-9][0-9]"
 
@@ -28,16 +29,16 @@ for item in test_strings:
      amount = float(item[0:1])
      unit = item[1:]
 
-# remove white space around snack
+# remove white space around unit
      unit = unit.strip()
+
+#Output details
      print("Amount:", amount)
      print("Unit:", unit) 
      print("Length of Unit:", len(unit))
      
 
 
-#print order
- 
 
 
    

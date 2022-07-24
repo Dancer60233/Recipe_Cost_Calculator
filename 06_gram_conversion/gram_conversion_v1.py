@@ -3,6 +3,8 @@
 #Gram Conversion V1
 #Aim - To create a basic version of the gram conversion component that works
 
+#Functions
+
 def gram_conversion(amount, unit):
  if unit == "g":
    gram_amount = amount
@@ -16,11 +18,12 @@ def gram_conversion(amount, unit):
    
 
 
-
+#Set variables for testing purposes
 amounts = 5
 units = "tbsp"
 
 amount_in_g = gram_conversion(amounts, units)
 
+#Print details...
 print("Ingredient amount: {} {}".format(amounts,units))
 print("Amount in Grams: {}g".format(amount_in_g))
