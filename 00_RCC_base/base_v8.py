@@ -70,6 +70,7 @@ def amount_analyser(ingredient, question):
 
   unit = "invalid choice"
   amount = "invalid choice"
+  amount_is_fraction = False
   
   
   while unit == "invalid choice" or amount == "invalid choice":
@@ -82,15 +83,19 @@ def amount_analyser(ingredient, question):
   #Seperate amount and unit
     for m in ingredient_amount:
      
-     if m.isdigit() or m == "." or m == "-":
+     if m.isdigit() or m == "." or m == "-" or m == "/":
         desired_amount = desired_amount + m
-        
+
      else:
       desired_unit = desired_unit + m
 
     #Strip unit and amount
     desired_amount = desired_amount.strip()
     desired_unit = desired_unit.strip().lower()
+
+    for m in desired_amount:
+      if m == "/":
+       desired_amount  = eval(desired_amount)
 
   #Use string check to see if unit is valid
     unit = string_check(desired_unit, valid_units)
@@ -220,8 +225,11 @@ if __name__ == "__main__":
  recipe_name = not_blank("Recipe Name: ")
  serving_size = float_checker("Serving Size: ", "serving size")
   
- space(2)
+ space(1)
 
+print("Please enter all your ingredients and their information\nWhen you have entered all your ingredients enter xxx")
+
+space(1)
 
 ing_name = ""
 
@@ -242,14 +250,14 @@ while ing_name != "xxx":
 
    
    #Ask for Amount of ingredient needed and analyse it
-   need_amount_calc, ing_need_amount = amount_analyser(ing_name, "Ingredient Amount Needed: ")
+   need_amount_calc, ing_need_amount = amount_analyser(ing_name, "Amount Needed: ")
   #Add correctly formatted amount to list
    all_need_amounts.append(ing_need_amount)
    
 
 
    # Ask for Total Amount of ingredient purchased
-   total_amount_calc, ing_total_amount = amount_analyser(ing_name, "Total Ingredient Amount: ")
+   total_amount_calc, ing_total_amount = amount_analyser(ing_name, "Total Amount Bought: ")
   #Add correctly formatted amount to list
    all_total_amounts.append(ing_total_amount)
 
